@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Tabs.css";
 
 export interface tabItemTypes {
@@ -36,10 +36,10 @@ const Tabs = ({
   styles_selected_tab_title = {},
   ...props
 }: TabsProps) => {
-  const [tabs, setTabs] = useState<tabItemTypes[]>(tabItems);
-  const [selectedTab, setSelectedTab] = useState<tabItemTypes>();
+  const [tabs, setTabs] = React.useState<tabItemTypes[]>(tabItems);
+  const [selectedTab, setSelectedTab] = React.useState<tabItemTypes>();
   const [selectedContent, setSelectedContent] =
-    useState<tabItemTypes["content"]>();
+    React.useState<tabItemTypes["content"]>();
 
   const onSelectTab = (item: tabItemTypes) => {
     setSelectedTab(item);
