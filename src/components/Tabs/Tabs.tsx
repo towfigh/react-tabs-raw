@@ -23,7 +23,7 @@ export interface TabsProps {
   styles_selected_tab_title?: React.CSSProperties;
 }
 
-const Tabs = ({
+const Tabs: React.FC<TabsProps> = ({
   tabItems = [],
   closeButton,
   addButton,
