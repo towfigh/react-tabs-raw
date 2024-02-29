@@ -1,7 +1,14 @@
 {
   "name": "react-tabs-raw",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Tabs with memory and customization, two-layered, efficient, and user-friendly.",
+  "keywords": [
+    "react",
+    "react-tab",
+    "tabs",
+    "customize able tabs",
+    "tab"
+  ],
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c",
