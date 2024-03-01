@@ -14,24 +14,36 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll --verbose",
     "storybook": "storybook dev",
     "build-storybook": "storybook build",
     "build": "rollup -c"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/tests/styles.js"
+    }
   },
   "author": "Tofigh Nazari",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.23.3",
     "@rollup/plugin-node-resolve": "^11.1.1",
     "@storybook/addon-actions": "^7.6.17",
     "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
     "@storybook/addon-links": "^7.6.17",
     "@storybook/addon-webpack5-compiler-babel": "^2.0.0",
     "@storybook/react": "^7.6.17",
     "@storybook/react-webpack5": "^7.6.17",
+    "@testing-library/react": "^14.2.1",
+    "babel-jest": "^29.7.0",
     "babel-loader": "^8.2.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.38.4",
