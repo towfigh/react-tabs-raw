@@ -1,0 +1,26 @@
+.rft_tabTitle_item{
+  border: 1px solid #d1d1d1;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.rft_tabTitle_item button{
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+.rft_tabTitle_item button:disabled{
+ cursor: not-allowed;
+}
+
+.rft_tabContent{
+  padding: 10px;
+}
+

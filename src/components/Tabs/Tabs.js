@@ -1,29 +1,7 @@
 import React, { useEffect } from "react";
-import "./Tabs.css";
+import "./styles.css";
 
-export interface tabItemTypes {
-  key: string | number;
-  title: React.ReactNode;
-  content: React.ReactNode;
-  icon?: React.ReactNode;
-  hasClose?: boolean;
-  disabled?: boolean;
-}
-
-export interface TabsProps {
-  tabItems: tabItemTypes[];
-  closeButton?: React.ReactNode | string;
-  addButton?: React.ReactNode | string;
-  onAddTab?: (() => void) | undefined;
-  classNames_content?: string;
-  classNames_tab_title?: string;
-  classNames_selected_tab_title?: string;
-  styles_content?: React.CSSProperties;
-  styles_tab_title?: React.CSSProperties;
-  styles_selected_tab_title?: React.CSSProperties;
-}
-
-const Tabs: React.FC<TabsProps> = ({
+const Tabs = ({
   tabItems = [],
   closeButton,
   addButton,
@@ -35,25 +13,24 @@ const Tabs: React.FC<TabsProps> = ({
   styles_tab_title = {},
   styles_selected_tab_title = {},
   ...props
-}: TabsProps) => {
-  const [tabs, setTabs] = React.useState<tabItemTypes[]>(tabItems);
-  const [selectedTab, setSelectedTab] = React.useState<tabItemTypes>();
-  const [selectedContent, setSelectedContent] =
-    React.useState<tabItemTypes["content"]>();
+}) => {
+  const [tabs, setTabs] = React.useState(tabItems);
+  const [selectedTab, setSelectedTab] = React.useState();
+  const [selectedContent, setSelectedContent] = React.useState();
 
-  const onSelectTab = (item: tabItemTypes) => {
+  const onSelectTab = (item) => {
     setSelectedTab(item);
     setSelectedContent(tabs.find((t) => t.key === item.key)?.content);
   };
 
-  const onCloseTab = (item: tabItemTypes) => {
+  const onCloseTab = (item) => {
     setTabs((pre) => pre.filter((t) => t.key !== item.key));
-    setSelectedTab(tabs?.filter((t) => t.key !== item.key)?.[0]!);
-    setSelectedContent(tabs?.filter((t) => t.key !== item.key)?.[0]?.content!);
+    setSelectedTab(tabs?.filter((t) => t.key !== item.key)?.[0]);
+    setSelectedContent(tabs?.filter((t) => t.key !== item.key)?.[0]?.content);
   };
 
   useEffect(() => {
-    setSelectedTab(tabItems[0]!);
+    setSelectedTab(tabItems[0]);
     setSelectedContent(tabItems[0]?.content);
   }, []);
 
