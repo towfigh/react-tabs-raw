@@ -51,28 +51,7 @@ export default {
 
 export const Default = {
   args: {
-    tabItems: [
-      {
-        key: "1",
-        title: "tab 1",
-        content: "content 1",
-      },
-      {
-        key: "2",
-        title: "tab 2",
-        content: "content 2",
-      },
-      {
-        key: "3",
-        title: "tab 3",
-        content: "content 3",
-      },
-      {
-        key: "4",
-        title: "tab 4",
-        content: "content 4",
-      },
-    ],
+    tabItems: mockTabs,
   },
 };
 
